@@ -7,3 +7,7 @@ and then run `make`. that's it
 
 # Running
 just use a vm or sum shii it will work on even a usb drive or a floppy disk
+
+# Credits
+coni - kernel and bootloader n shii
+me - command line intrepreter
