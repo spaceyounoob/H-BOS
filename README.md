@@ -13,7 +13,3 @@ and then run `make`. that's it
 preferably spin up an 86box for it or if you're feeling daring dd it to a 360kb 5.25" floppy diskette and run it on a real PC!
 
 `dd if=os.img of=/dev/fd0 bs=512 conv=notrunc`
-
-# Credits
-coni for og frfr
-frfrf
