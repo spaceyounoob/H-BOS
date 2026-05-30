@@ -1,0 +1,38 @@
+#include "syscall.h"
+#include "fat12.h"
+#include "panic.h"
+
+static void print_char(char c) {
+    __asm__ volatile (
+        "mov $0x0E, %%ah\n\t"
+        "xor %%bh, %%bh\n\t"
+        "int $0x10"
+        : : "a"(c) : "bh"
+    );
+}
+
+static void print_str(const char *s) {
+    while (*s) print_char(*s++);
+}
+
+void kernel_main(void) {
+    DirEntry entry;
+    unsigned char buf[512];
+    unsigned int i;
+
+    syscall_init();
+
+    if (fat12_find_file("TEST    ", "TXT", &entry) != 0)
+        panic();
+
+    fat12_load_file(&entry, 0x0000, (unsigned short)buf);
+
+    for (i = 0; i < entry.size; i++)
+        print_char(buf[i]);
+
+    print_str("\r\n");
+
+    while (1) {
+        __asm__ volatile ("hlt");
+    }
+}
