@@ -1,15 +1,9 @@
-# Hey 
 
-Horrible disgusting operating system written for the 8088/8086
+# Build instructions
 
-# Building
-
-Install nasm, dosfstools, ia16-elf-gcc, dd, mtools, fuck it just install every package in your repos and the AUR it's bound to compile then
+Install `nasm`, `dosfstools`, `ia16-gcc`, `dd`, and `mtools`.
 
 and then run `make`. that's it
 
 # Running
-
-preferably spin up an 86box for it or if you're feeling daring dd it to a 360kb 5.25" floppy diskette and run it on a real PC!
-
-`dd if=os.img of=/dev/fd0 bs=512 conv=notrunc`
+just use a vm or sum shii it will work on even a usb drive or a floppy disk
